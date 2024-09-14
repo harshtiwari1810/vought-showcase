@@ -13,9 +13,13 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        initCarouselView()
+        //        addSegmentedProgressBar()
+        
     }
     
+    @IBAction func storyBtnAction(_ sender: Any) {
+        self.initCarouselView()
+    }
     private func initCarouselView() {
         // Create a carousel item provider
         let carouselItemProvider = CarouselItemDataSourceProvider()
@@ -24,6 +28,8 @@ class MainViewController: UIViewController {
         let carouselViewController = CarouselViewController(items: carouselItemProvider.items())
         
         // Add carousel view controller in container view
+        //        carouselViewController.modalPresentationStyle = .fullScreen
+        //        self.present(carouselViewController, animated: true,completion: nil)
         add(asChildViewController: carouselViewController, containerView: containerView)
     }
     
